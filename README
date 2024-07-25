@@ -4,3 +4,6 @@
 - kubectl run nginx --image=nginx --port=80
 - kubectl describe pod nginx
 - kubectl apply -f manifest.yml
+- kubectl apply -f deployment.yml
+- kubectl get deployment
+- kubectl get rs
