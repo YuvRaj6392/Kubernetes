@@ -7,3 +7,6 @@
 - kubectl apply -f deployment.yml
 - kubectl get deployment
 - kubectl get rs
+- kubectl rollout history deployment/nginx-deployment(history of deployment)
+- kubectl rollout undo deployment/nginx-deployment(undo last deployment)
+- kubectl logs -f podname
