@@ -12,3 +12,10 @@
 - kubectl logs -f podname
 - kubectl get pods -owide(get pod ip)
 - kubectl get svc
+- kubectl get pods --all-namespaces
+- kubectl get namespaces
+- kubectl create namespace backend
+- kubectl get deployment --namespace backend
+- kubectl config set-context --current --namespace=backend-team
+- kubectl get pods
+- kubectl config set-context --current --namespace=default
