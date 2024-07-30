@@ -19,3 +19,8 @@
 - kubectl config set-context --current --namespace=backend-team
 - kubectl get pods
 - kubectl config set-context --current --namespace=default
+- helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+- helm repo update
+- helm install nginx-ingress ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace
+- Navigate to C:\Windows\System32\drivers\etc.
+  Set the file type to "All Files" and select the hosts file.(DNS spoofing)
