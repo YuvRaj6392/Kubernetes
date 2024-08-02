@@ -24,3 +24,4 @@
 - helm install nginx-ingress ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace
 - Navigate to C:\Windows\System32\drivers\etc.
   Set the file type to "All Files" and select the hosts file.(DNS spoofing)
+- kubectl get cm

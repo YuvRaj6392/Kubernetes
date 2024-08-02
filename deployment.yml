@@ -1,21 +1,45 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
-  namespace: backend
+  name: ecom-backend-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: ecom-backend
   template:
     metadata:
       labels:
-        app: nginx
+        app: ecom-backend
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: ecom-backend
+        image: yuv6392/rev:v1
         ports:
-        - containerPort: 80
-        
+        - containerPort: 3000
+        env:
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: dotfile_secret
+              key: database_url
+        - name: CACHE_SIZE
+          valueFrom:
+            configMapKeyRef:
+              name: ecom-backend-config
+              key: cache_size
+        - name: PAYMENT_GATEWAY_URL
+          valueFrom:
+            configMapKeyRef:
+              name: ecom-backend-config
+              key: payment_gateway_url
+        - name: MAX_CART_ITEMS
+          valueFrom:
+            configMapKeyRef:
+              name: ecom-backend-config
+              key: max_cart_items
+        - name: SESSION_TIMEOUT
+          valueFrom:
+            configMapKeyRef:
+              name: ecom-backend-config
+              key: session_timeout
