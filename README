@@ -25,3 +25,4 @@
 - Navigate to C:\Windows\System32\drivers\etc.
   Set the file type to "All Files" and select the hosts file.(DNS spoofing)
 - kubectl get cm
+-kubectl exec -it podname /bin/sh
